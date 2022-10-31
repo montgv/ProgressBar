@@ -272,6 +272,48 @@ namespace FormClientes
             {
                 PBEstado.Value++;
             }
+
+            if (cBTipoCliente.Text.Length != 0) {
+                PBEstado.Value++;
+            }
+
+            if (tBTelef1.Text.Length != 0)
+            {
+                PBEstado.Value++;
+            }
+
+            if (tBTelef2.Text.Length != 0)
+            {
+                PBEstado.Value++;
+            }
+
+            if (nUDFacturas.Value != 0)
+            {
+                PBEstado.Value++;
+            }
+
+            if (tBEmail.Text.Length != 0)
+            {
+                PBEstado.Value++;
+            }
+
+            if (tBWeb.Text.Length != 0)
+            {
+                PBEstado.Value++;
+            }
+
+            if (tBIban.Text.Length != 0)
+            {
+                PBEstado.Value++;
+            }
+
+            if (gBSexo.Text.Length != 0)
+            {
+                PBEstado.Value++;
+            }
+
+            //if (pBFoto.)
+
         }
 
         private void BTEnviar_Click(object sender, EventArgs e)
