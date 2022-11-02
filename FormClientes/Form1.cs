@@ -57,12 +57,6 @@ namespace FormClientes
 
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -73,15 +67,6 @@ namespace FormClientes
 
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void label11_Click(object sender, EventArgs e)
         {
@@ -256,64 +241,6 @@ namespace FormClientes
         {
             Form2 f = new Form2();
             f.Show();
-        }
-
-        private void btIncrementar_Click(object sender, EventArgs e)
-        {
-            PBEstado.Minimum = 0;
-            PBEstado.Maximum = 11;
-            
-            if (tBCodigo.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (tBNombreCliente.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (cBTipoCliente.Text.Length != 0) {
-                PBEstado.Value++;
-            }
-
-            if (tBTelef1.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (tBTelef2.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (nUDFacturas.Value != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (tBEmail.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (tBWeb.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (tBIban.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            if (gBSexo.Text.Length != 0)
-            {
-                PBEstado.Value++;
-            }
-
-            //if (pBFoto.)
-
         }
 
         private void BTEnviar_Click(object sender, EventArgs e)
@@ -602,7 +529,135 @@ namespace FormClientes
 
             }
         }
-     
+
+        //Creo la siguiente función donde en cada componenten hay un texto distinto de una cadena vacia
+        //en el caso del numeric up down, el valor es distinto de 0 o en los radio button si esta seleccionado
+        //y es igual a verdadero que contador sume uno y por ultimo se los asignamos al valor del progressbar
+        //para que se muestre en el progressbar
+        public void completadoPersonal ()
+        {
+            int contador = 0;
+
+            if (tBCodigo.Text != "")
+            {
+                contador++;
+            }
+
+            if (tBNombreCliente.Text != "")
+            {
+                contador++;
+            }
+
+            if (cBTipoCliente.Text != "")
+            {
+                contador++;
+            }
+
+            if (tBTelef1.Text != "")
+            {
+                contador++;
+            }
+
+            if (tBTelef2.Text != "")
+            {
+                contador++;
+            }
+
+            if (nUDFacturas.Value != 0)
+            {
+                contador++;
+            }
+
+            if (tBEmail.Text != "")
+            {
+                contador++;
+            }
+
+            if (tBWeb.Text != "")
+            {
+                contador++;
+            }
+
+            if (tBIban.Text != "")
+            {
+                contador++;
+            }
+
+            if (rBHombre.Checked == true)
+            {
+                contador++;
+            }
+
+            if (rBMujer.Checked == true)
+            {
+                contador++;
+            }
+
+            PBEstado.Value = contador;
+        }
+
+        //A partir de aqui lo que estamos es pasandole la funcion a los distintos eventos que hace que se
+        //active por asi decirlo el cambio que depende de cada componente
+
+        private void tBCodigo_TextChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void tBNombreCliente_TextChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void cBTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void tBTelef1_TextChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void tBTelef2_TextChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void nUDFacturas_ValueChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void tBEmail_TextChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void tBWeb_TextChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void tBIban_TextChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void nUDFacturas_Click(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void rBMujer_CheckedChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
+
+        private void rBHombre_CheckedChanged(object sender, EventArgs e)
+        {
+            completadoPersonal();
+        }
     }
 
 }
